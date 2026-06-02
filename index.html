@@ -1,6 +1,63 @@
 <!DOCTYPE html>
 <html>
-<body>
-Chúc mừng đã tìm đc kho báu[ford rat ham] 
+<body style="font-family: monospace;">
+
+<h2>🔐 MẬT MÃ 3 TẦNG</h2>
+
+<div id="stage1">
+  <p>Tầng 1: Giải Caesar Cipher (dịch -3)</p>
+  <p><b>KHOÁ:</b> Nkrv yjhv</p>
+
+  <input id="a1">
+  <button onclick="check1()">OK</button>
+</div>
+
+<div id="stage2" style="display:none;">
+  <p>Tầng 2: Decode Base64</p>
+  <p><b>KHOÁ:</b> V29sZiBsb3ZlcyBjb2Rl</p>
+
+  <input id="a2">
+  <button onclick="check2()">OK</button>
+</div>
+
+<div id="stage3" style="display:none;">
+  <p>Tầng 3: Mật khẩu cuối</p>
+  <p>Gợi ý: thứ em luôn nhớ 😏</p>
+
+  <input id="a3">
+  <button onclick="check3()">OK</button>
+</div>
+
+<h3 id="result"></h3>
+
+<script>
+function check1() {
+  if (document.getElementById("a1").value.toLowerCase() === "joke time") {
+    document.getElementById("stage1").style.display = "none";
+    document.getElementById("stage2").style.display = "block";
+  } else {
+    alert("Sai tầng 1");
+  }
+}
+
+function check2() {
+  if (document.getElementById("a2").value.toLowerCase() === "wolf loves code") {
+    document.getElementById("stage2").style.display = "none";
+    document.getElementById("stage3").style.display = "block";
+  } else {
+    alert("Sai tầng 2");
+  }
+}
+
+function check3() {
+  if (document.getElementById("a3").value === "bro") {
+    document.getElementById("result").innerText =
+      "🎉 Chúc mừng! Em bro đã phá xong hệ thống mật mã!";
+  } else {
+    alert("Sai tầng cuối");
+  }
+}
+</script>
+
 </body>
 </html>
